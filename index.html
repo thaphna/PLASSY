@@ -3,100 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLASSY</title>
+    <title>PLASSY | Created by Vithaphna Kong</title>
+
+    <meta name="description" content="PLASSY official product website created by Vithaphna Kong. A simple skincare website for body lotion, sunscreen, moisturiser, and skin glow products.">
+    <meta name="author" content="Vithaphna Kong">
+    <meta name="keywords" content="Vithaphna Kong, PLASSY, skincare website, body lotion, sunscreen, moisturiser, GitHub Pages">
+
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-section left">
-            <a id="En" class="nav-link" href="English">En</a>
-            <a id="Kh" class="nav-link" href="Khmer">Kh</a>
-        </div>
-        <div class="nav-section center">
-            <a id="product" class="nav-link-center" href="#product">Product</a>
-            <a id="about" class="nav-link-center" href="#about">About</a>
-            <a id="contact" class="nav-link-center" href="#contact">Contact</a>
-        </div>
-        <div class="nav-section right">
-            <a id="facebook" href="https://www.facebook.com/profile.php?id=100075199726139"><img src="/images/facebook.png" alt="facebook"></a>
-            <a id="instagram" href="https://www.instagram.com"><img src="/images/instagram.png" alt="instagram"></a>
-            <a id="mail" href="mailto:someone@example.com"><img src="/images/mail.png" alt="mail"></a>
-        </div>
-    </nav>
-    <div class="below-navbar-page1">
-        <div class="left-image">
-            <img src="/images/Plassy1.png" alt="Plassy1">
-        </div>
-        <div class="right-text">
-            <h2>Sunscreen</h2>
-            <h2>Skin Glow</h2>
-            <h1>PLASSY</h1>
-            <h2>Body Lotion</h2>
-            <h2>Moisturiser</h2>
-        </div>
-    </div>
 
-    <div class="below-page1">
-        <div class="left-text">
-            <div class="left-text-p">
-                <p class="p1">What is</p>   
-                <p class="p2">PLASSY ?</p>
-            </div>
-            <ul>
-                <li>Helps keep skin healthy</li>
-                <li>Helps brighten and smooth skin</li>
-                <li>Helps fight and prevent dry, dehydrated skin</li>
-                <li>Repairs skin cells from dark spots</li>
-                <li>Prevents stretch marks</li>
-                <li>Protects skin from UV sunlight</li>
-            </ul>
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="#">En</a>
+            <a href="#">Kh</a>
+        </div>
 
+        <nav class="nav-center">
+            <a href="#product">Product</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-right">
+            <a href="https://www.facebook.com/profile.php?id=100075199726139" target="_blank">
+                <img src="images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="mailto:someone@example.com">
+                <img src="images/mail.png" alt="Email">
+            </a>
         </div>
-        <div class="right-image">
-            <img src="/images/plassy2.png" alt="Plassy1">
-        </div>
-    </div>
-    <div class="below-page2">
-        <div class="left-image2">
-            <img src="/images/plassy3.png" alt="Plassy3">
-        </div>
-        <div class="right-details">
-            <div class="right-text-p">
-                <p class="p3">What in PLASSY ?</p>   
+    </header>
+
+    <main>
+
+        <section class="hero" id="product">
+            <div class="hero-image">
+                <img src="images/Plassy1.png" alt="PLASSY product bottle">
             </div>
-            <div class="item">
-                <div class="item1">
-                    <img src="/images/alovera.png" alt="alovera">
-                    <p class="details">Aloe Vera</p>
-                </div>   
-                <div class="item2">
-                    <img src="/images/vitamin.png" alt="vitamin">
-                    <p class="details">Vitamin C & E</p>
-                </div>  
-                <div class="item3">
-                    <img src="/images/collegen.png" alt="collagen">
-                    <p class="details">Gluta collagen</p>
-                </div>  
+
+            <div class="hero-text">
+                <p>Sunscreen</p>
+                <p>Skin Glow</p>
+                <h1>PLASSY</h1>
+                <p>Body Lotion</p>
+                <p>Moisturiser</p>
             </div>
-            <div class="item-2">
-                <div class="item4">
-                    <img src="/images/pearl.png" alt="pearl">   
-                    <p class="details">Pearl</p>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-text">
+                <h2><span>What is</span> PLASSY?</h2>
+
+                <ul>
+                    <li>Helps keep skin healthy</li>
+                    <li>Helps brighten and smooth skin</li>
+                    <li>Helps fight and prevent dry, dehydrated skin</li>
+                    <li>Repairs skin cells from dark spots</li>
+                    <li>Prevents stretch marks</li>
+                    <li>Protects skin from UV sunlight</li>
+                </ul>
+            </div>
+
+            <div class="about-image">
+                <img src="images/plassy2.png" alt="PLASSY skincare product">
+            </div>
+        </section>
+
+        <section class="ingredients-section">
+            <div class="ingredients-image">
+                <img src="images/plassy3.png" alt="PLASSY product display">
+            </div>
+
+            <div class="ingredients-content">
+                <h2>What is in PLASSY?</h2>
+
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <img src="images/alovera.png" alt="Aloe Vera">
+                        <p>Aloe Vera</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <img src="images/vitamin.png" alt="Vitamin C and E">
+                        <p>Vitamin C & E</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <img src="images/collegen.png" alt="Gluta collagen">
+                        <p>Gluta Collagen</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <img src="images/pearl.png" alt="Pearl">
+                        <p>Pearl</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <img src="images/genseng.png" alt="Ginseng">
+                        <p>Ginseng</p>
+                    </div>
                 </div>
-                <div class="item5">
-                    <img src="/images/genseng.png" alt="genseng">   
-                    <p class="details">Ginseng</p>
-                </div>
-                
             </div>
-  
-        </div>
-    </div>
-    <div class="below-page3">
-        <h1 class="contact">Contact Us</h1>
-        <div class="contact1">
+        </section>
 
-        </div>
-    </div>
+        <section class="contact-section" id="contact">
+            <h2>Contact Us</h2>
+
+            <div class="contact-box">
+                <p>Thank you for visiting the official PLASSY website.</p>
+                <p>For more information, contact us through Facebook, Instagram, or email.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>PLASSY website created by <strong>Vithaphna Kong</strong></p>
+    </footer>
+
 </body>
 </html>
