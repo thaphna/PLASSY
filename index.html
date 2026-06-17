@@ -131,6 +131,30 @@
     <footer class="footer">
         <p>PLASSY website created by <strong>Vithaphna Kong</strong></p>
     </footer>
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.querySelector(".navbar");
+    const menuLinks = document.querySelectorAll(".nav-center a");
 
+    menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("open");
+
+        if (navbar.classList.contains("open")) {
+            menuToggle.textContent = "×";
+            menuToggle.setAttribute("aria-label", "Close menu");
+        } else {
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "Open menu");
+        }
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navbar.classList.remove("open");
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "Open menu");
+        });
+    });
+</script>
 </body>
 </html>
