@@ -9,28 +9,24 @@ html {
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eeeeee;
+    color: #111;
     overflow-x: hidden;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 
 .navbar {
-    width: 100%;
-    min-height: 80px;
-    padding: 0 40px;
-    background-color: #000000;
-    display: flex;
+    max-width: 1100px;
+    height: 50px;
+    margin: 35px auto 0;
+    background-color: #050505;
+    border: 1px solid #222;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    padding: 0 35px;
 }
 
 .nav-left,
@@ -38,180 +34,236 @@ body {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 24px;
+}
+
+.nav-left {
+    justify-content: flex-start;
+    gap: 18px;
+}
+
+.nav-center {
+    justify-content: center;
+    gap: 95px;
+}
+
+.nav-right {
+    justify-content: flex-end;
+    gap: 18px;
 }
 
 .navbar a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
-    transition: 0.2s ease;
-}
-
-.nav-center a {
-    font-size: 20px;
+    font-size: 11px;
+    letter-spacing: 0.4px;
 }
 
 .navbar a:hover {
-    color: #CFB69F;
+    color: #cfb69f;
 }
 
 .nav-right img {
-    width: 24px;
-    height: 24px;
+    width: 23px;
+    height: 23px;
     object-fit: contain;
 }
 
-/* Hero Section */
+/* ================= MAIN WIDTH ================= */
 
-.hero {
-    margin-top: 80px;
-    min-height: calc(100vh - 80px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+main {
+    max-width: 1100px;
+    margin: 0 auto 70px;
 }
 
-.hero-image {
-    background-color: #ffffff;
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 430px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
+    background-color: white;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
+/* right beige side */
 .hero-text {
-    background-color: #CFB69F;
+    background-color: #cbb8a1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 60px;
 }
 
 .hero-text p {
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 28px;
+    color: white;
+    font-size: 28px;
+    margin: 18px 0;
+    font-weight: 400;
 }
 
 .hero-text h1 {
-    font-family: Georgia, serif;
-    font-size: 90px;
-    color: #111111;
-    margin-bottom: 28px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 82px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin: 18px 0;
 }
 
-/* About Section */
+/* ================= ABOUT SECTION ================= */
 
 .about-section {
-    min-height: 100vh;
+    margin-top: 35px;
+    min-height: 470px;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.45fr 0.9fr;
+    border: 1px solid #777;
+    background-color: #dcdcdc;
 }
 
 .about-text {
-    background-color: #D9D9D9;
-    padding: 90px 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 80px 55px;
 }
 
 .about-text h2 {
-    font-family: Georgia, serif;
-    font-size: 76px;
-    margin-bottom: 40px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 82px;
+    font-weight: 600;
+    margin-bottom: 55px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
 .about-text h2 span {
-    display: block;
-    font-family: Arial, sans-serif;
-    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 29px;
+    font-weight: 400;
 }
 
 .about-text ul {
-    list-style-position: inside;
+    margin-left: 20px;
 }
 
 .about-text li {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 22px;
+    font-size: 21px;
+    margin-bottom: 8px;
+    line-height: 1.25;
+}
+
+.about-image {
+    background-color: #e5e5e5;
 }
 
 .about-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* Ingredients Section */
+/* ================= INGREDIENTS SECTION ================= */
 
 .ingredients-section {
-    min-height: 100vh;
+    margin-top: 18px;
+    min-height: 470px;
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1fr 1.05fr;
+    border: 1px solid #777;
+    background-color: white;
+}
+
+.ingredients-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
 }
 
 .ingredients-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 380px;
+    object-fit: contain;
 }
 
 .ingredients-content {
-    padding: 90px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 45px 45px 40px 20px;
 }
 
 .ingredients-content h2 {
-    font-size: 44px;
-    margin-bottom: 50px;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 45px;
 }
 
 .ingredients-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 28px 35px;
+    align-items: center;
 }
 
 .ingredient-card {
     text-align: center;
-    font-weight: 700;
-    font-size: 20px;
 }
 
 .ingredient-card img {
-    width: 130px;
-    height: 130px;
-    object-fit: contain;
-    margin-bottom: 16px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
 }
 
-/* Contact Section */
+.ingredient-card p {
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+/* Make last 2 ingredients centered */
+.ingredient-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: 70px;
+}
+
+.ingredient-card:nth-child(5) {
+    grid-column: 3 / 4;
+    margin-right: 70px;
+}
+
+/* ================= CONTACT SECTION ================= */
 
 .contact-section {
-    min-height: 80vh;
-    background-color: #CFB69F;
-    padding: 90px 40px;
-    text-align: center;
+    margin-top: 65px;
+    min-height: 470px;
+    background-color: #cbb8a1;
+    border: 1px solid #777;
+    padding: 35px 0 60px;
 }
 
 .contact-section h2 {
-    font-size: 48px;
-    margin-bottom: 40px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 35px;
 }
 
 .contact-box {
-    max-width: 900px;
+    width: 78%;
     min-height: 300px;
     margin: 0 auto;
-    background-color: #D9D9D9;
-    border-radius: 14px;
+    background-color: #ddd9d4;
+    border-radius: 12px;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -220,36 +272,89 @@ body {
 
 .contact-box p {
     font-size: 22px;
+    color: #555;
+    text-align: center;
     margin-bottom: 16px;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 
 .footer {
-    background-color: #000000;
-    color: #ffffff;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    background-color: #050505;
+    color: white;
     text-align: center;
-    padding: 28px 16px;
-    font-size: 16px;
+    padding: 18px;
+    font-size: 14px;
 }
 
 .footer strong {
-    color: #CFB69F;
+    color: #cfb69f;
 }
 
-/* Tablet */
+/* ================= TABLET ================= */
 
 @media (max-width: 900px) {
-    .navbar {
-        padding: 0 20px;
+    .navbar,
+    main,
+    .footer {
+        max-width: 92%;
     }
 
     .nav-center {
-        gap: 16px;
+        gap: 35px;
     }
 
-    .nav-center a {
-        font-size: 16px;
+    .hero-text h1 {
+        font-size: 60px;
+    }
+
+    .hero-text p {
+        font-size: 22px;
+    }
+
+    .about-text h2 {
+        font-size: 58px;
+    }
+
+    .about-text h2 span {
+        font-size: 24px;
+    }
+
+    .about-text li {
+        font-size: 18px;
+    }
+
+    .ingredients-grid {
+        gap: 25px;
+    }
+
+    .ingredient-card:nth-child(4),
+    .ingredient-card:nth-child(5) {
+        margin: 0;
+        grid-column: auto;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+    .navbar {
+        height: auto;
+        padding: 15px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .nav-left,
+    .nav-center,
+    .nav-right {
+        justify-content: center;
+    }
+
+    .nav-center {
+        gap: 28px;
     }
 
     .hero,
@@ -258,91 +363,62 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .hero-text h1 {
-        font-size: 68px;
-    }
-
-    .about-text h2 {
-        font-size: 58px;
-    }
-
-    .ingredients-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-    .navbar {
-        min-height: auto;
-        padding: 16px;
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .nav-left,
-    .nav-center,
-    .nav-right {
-        gap: 16px;
-    }
-
     .hero {
-        margin-top: 150px;
+        min-height: auto;
+    }
+
+    .hero-image img {
+        height: auto;
     }
 
     .hero-text {
-        padding: 40px 24px;
-        text-align: center;
-    }
-
-    .hero-text p {
-        font-size: 24px;
+        padding: 45px 20px;
     }
 
     .hero-text h1 {
         font-size: 52px;
     }
 
+    .hero-text p {
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
     .about-text {
-        padding: 60px 24px;
+        padding: 45px 28px;
     }
 
     .about-text h2 {
+        display: block;
         font-size: 46px;
+        margin-bottom: 35px;
     }
 
     .about-text h2 span {
-        font-size: 26px;
+        font-size: 22px;
+        margin-bottom: 10px;
+        display: block;
     }
 
     .about-text li {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .ingredients-content {
-        padding: 60px 24px;
-        text-align: center;
+        padding: 40px 25px;
     }
 
     .ingredients-content h2 {
-        font-size: 34px;
+        font-size: 28px;
     }
 
     .ingredients-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-section {
-        padding: 60px 24px;
-    }
-
-    .contact-section h2 {
-        font-size: 36px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contact-box {
-        padding: 32px 20px;
+        width: 86%;
+        padding: 35px 25px;
     }
 
     .contact-box p {
