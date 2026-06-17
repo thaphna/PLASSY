@@ -6,11 +6,10 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
-    width: 100%;
-    min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #eeeeee;
     color: #111;
@@ -21,14 +20,19 @@ body {
 
 .navbar {
     width: min(1100px, calc(100% - 32px));
-    min-height: 54px;
-    margin: 32px auto 0;
+    height: 56px;
     background-color: #050505;
     border: 1px solid #222;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     padding: 0 32px;
+
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
 }
 
 .nav-left,
@@ -71,29 +75,44 @@ body {
     display: block;
 }
 
-/* ================= MAIN LAYOUT ================= */
+/* ================= MAIN ================= */
 
 main {
     width: min(1100px, calc(100% - 32px));
-    margin: 0 auto 64px;
+    margin: 0 auto;
 }
 
+/* Every page fills the screen */
 .hero,
 .about-section,
 .ingredients-section,
 .contact-section {
     width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     border: 1px solid #777;
     overflow: hidden;
 }
 
-/* ================= HERO ================= */
+/* Add space so fixed navbar does not cover content */
+.hero,
+.about-section,
+.ingredients-section,
+.contact-section {
+    padding-top: 80px;
+}
+
+/* ================= PAGE 1: HERO ================= */
 
 .hero {
-    min-height: 430px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: white;
+}
+
+.hero-image {
+    height: calc(100vh - 80px);
 }
 
 .hero-image img {
@@ -104,43 +123,43 @@ main {
 }
 
 .hero-text {
+    height: calc(100vh - 80px);
     background-color: #cbb8a1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: clamp(32px, 5vw, 70px);
     text-align: center;
+    padding: 40px;
 }
 
 .hero-text p {
     color: white;
-    font-size: clamp(22px, 2.4vw, 30px);
-    margin: 16px 0;
+    font-size: clamp(24px, 2.5vw, 34px);
+    margin: 18px 0;
     font-weight: 400;
 }
 
 .hero-text h1 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(56px, 7vw, 88px);
+    font-size: clamp(60px, 7vw, 96px);
     font-weight: 500;
     letter-spacing: 3px;
-    margin: 24px 0;
+    margin: 28px 0;
     color: #000;
 }
 
-/* ================= ABOUT ================= */
+/* ================= PAGE 2: ABOUT ================= */
 
 .about-section {
-    margin-top: 32px;
-    min-height: 470px;
     display: grid;
-    grid-template-columns: 1.4fr 0.9fr;
+    grid-template-columns: 1.35fr 0.9fr;
     background-color: #dcdcdc;
 }
 
 .about-text {
-    padding: clamp(44px, 7vw, 80px) clamp(28px, 5vw, 60px);
+    height: calc(100vh - 80px);
+    padding: clamp(40px, 6vw, 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -148,9 +167,9 @@ main {
 
 .about-text h2 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(48px, 7vw, 82px);
+    font-size: clamp(52px, 7vw, 86px);
     font-weight: 600;
-    margin-bottom: 42px;
+    margin-bottom: 44px;
     display: flex;
     align-items: center;
     gap: 18px;
@@ -158,7 +177,7 @@ main {
 
 .about-text h2 span {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(20px, 2.5vw, 29px);
+    font-size: clamp(22px, 2.5vw, 30px);
     font-weight: 400;
 }
 
@@ -167,9 +186,13 @@ main {
 }
 
 .about-text li {
-    font-size: clamp(17px, 2vw, 21px);
-    margin-bottom: 10px;
+    font-size: clamp(18px, 2vw, 23px);
+    margin-bottom: 14px;
     line-height: 1.35;
+}
+
+.about-image {
+    height: calc(100vh - 80px);
 }
 
 .about-image img {
@@ -179,49 +202,48 @@ main {
     display: block;
 }
 
-/* ================= INGREDIENTS ================= */
+/* ================= PAGE 3: INGREDIENTS ================= */
 
 .ingredients-section {
-    margin-top: 24px;
-    min-height: 470px;
     display: grid;
-    grid-template-columns: 1fr 1.08fr;
+    grid-template-columns: 1fr 1.1fr;
     background-color: white;
 }
 
 .ingredients-image {
+    height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(28px, 5vw, 52px);
+    padding: clamp(30px, 5vw, 60px);
 }
 
 .ingredients-image img {
     width: 100%;
-    height: auto;
-    max-height: 390px;
+    height: 100%;
     object-fit: contain;
     display: block;
 }
 
 .ingredients-content {
-    padding: clamp(36px, 5vw, 56px);
+    height: calc(100vh - 80px);
+    padding: clamp(35px, 5vw, 60px);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .ingredients-content h2 {
-    font-size: clamp(28px, 3.2vw, 36px);
+    font-size: clamp(30px, 3.5vw, 42px);
     font-weight: 400;
     text-align: center;
-    margin-bottom: 44px;
+    margin-bottom: 46px;
 }
 
 .ingredients-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 34px 28px;
+    gap: 38px 28px;
     align-items: start;
 }
 
@@ -230,41 +252,44 @@ main {
 }
 
 .ingredient-card img {
-    width: clamp(76px, 9vw, 100px);
-    height: clamp(76px, 9vw, 100px);
+    width: clamp(80px, 9vw, 105px);
+    height: clamp(80px, 9vw, 105px);
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
 }
 
 .ingredient-card p {
-    font-size: clamp(15px, 1.8vw, 19px);
+    font-size: clamp(16px, 1.8vw, 20px);
     line-height: 1.25;
 }
 
-/* ================= CONTACT ================= */
+/* ================= PAGE 4: CONTACT ================= */
 
 .contact-section {
-    margin-top: 56px;
-    min-height: 450px;
     background-color: #cbb8a1;
-    padding: clamp(34px, 5vw, 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: clamp(24px, 5vw, 60px);
+    padding-right: clamp(24px, 5vw, 60px);
+    padding-bottom: 60px;
 }
 
 .contact-section h2 {
     text-align: center;
-    font-size: clamp(32px, 4vw, 42px);
+    font-size: clamp(34px, 4vw, 46px);
     font-weight: 400;
     margin-bottom: 34px;
 }
 
 .contact-box {
     width: min(820px, 100%);
-    min-height: 260px;
+    min-height: 300px;
     margin: 0 auto;
     background-color: #ddd9d4;
     border-radius: 12px;
-    padding: clamp(30px, 5vw, 50px);
+    padding: clamp(32px, 5vw, 52px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -272,7 +297,7 @@ main {
 }
 
 .contact-box p {
-    font-size: clamp(17px, 2vw, 22px);
+    font-size: clamp(18px, 2vw, 23px);
     color: #555;
     line-height: 1.45;
     margin-bottom: 14px;
@@ -281,23 +306,15 @@ main {
 /* ================= FOOTER ================= */
 
 .footer {
-    width: min(1100px, calc(100% - 32px));
-    margin: 0 auto 40px;
-    background-color: #050505;
-    color: white;
-    text-align: center;
-    padding: 18px 12px;
-    font-size: 14px;
-}
-
-.footer strong {
-    color: #cfb69f;
+    display: none;
 }
 
 /* ================= TABLET ================= */
 
 @media (max-width: 900px) {
     .navbar {
+        top: 12px;
+        height: auto;
         padding: 14px 22px;
         grid-template-columns: 1fr;
         gap: 12px;
@@ -313,12 +330,23 @@ main {
     .about-section,
     .ingredients-section {
         grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .hero-image,
+    .hero-text,
+    .about-text,
+    .about-image,
+    .ingredients-image,
+    .ingredients-content {
+        height: auto;
+        min-height: 50vh;
     }
 
     .hero-image img,
     .about-image img {
-        height: auto;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
     }
 
     .about-text h2 {
@@ -343,14 +371,18 @@ main {
 /* ================= MOBILE ================= */
 
 @media (max-width: 600px) {
+    html {
+        scroll-snap-type: none;
+    }
+
     .navbar {
         width: calc(100% - 20px);
-        margin-top: 10px;
+        top: 10px;
         padding: 14px 12px;
     }
 
     .nav-center {
-        gap: 26px;
+        gap: 24px;
     }
 
     .navbar a {
@@ -368,34 +400,43 @@ main {
 
     main {
         width: calc(100% - 20px);
-        margin-bottom: 36px;
+    }
+
+    .hero,
+    .about-section,
+    .ingredients-section,
+    .contact-section {
+        min-height: 100vh;
+        padding-top: 120px;
+        scroll-snap-align: none;
     }
 
     .hero {
-        min-height: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        min-height: 38vh;
     }
 
     .hero-text {
-        padding: 44px 18px;
+        min-height: calc(62vh - 120px);
+        padding: 36px 18px;
     }
 
     .hero-text p {
-        font-size: 23px;
+        font-size: 22px;
         margin: 12px 0;
     }
 
     .hero-text h1 {
         font-size: 52px;
-        margin: 30px 0;
-    }
-
-    .about-section,
-    .ingredients-section {
-        margin-top: 22px;
+        margin: 28px 0;
     }
 
     .about-text {
-        padding: 42px 22px;
+        min-height: auto;
+        padding: 40px 22px;
     }
 
     .about-text h2 {
@@ -408,26 +449,32 @@ main {
     }
 
     .about-text li {
-        font-size: 16.5px;
+        font-size: 16px;
         margin-bottom: 10px;
     }
 
+    .about-image {
+        min-height: 36vh;
+    }
+
     .ingredients-image {
-        padding: 28px 18px;
+        min-height: 38vh;
+        padding: 24px 18px;
     }
 
     .ingredients-content {
-        padding: 34px 18px 42px;
+        min-height: auto;
+        padding: 32px 18px 40px;
     }
 
     .ingredients-content h2 {
         font-size: 28px;
-        margin-bottom: 32px;
+        margin-bottom: 30px;
     }
 
     .ingredients-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 28px 16px;
+        gap: 26px 16px;
     }
 
     .ingredient-card img {
@@ -440,8 +487,10 @@ main {
     }
 
     .contact-section {
-        margin-top: 28px;
-        padding: 34px 18px;
+        justify-content: center;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 40px;
     }
 
     .contact-section h2 {
@@ -455,11 +504,5 @@ main {
 
     .contact-box p {
         font-size: 16.5px;
-    }
-
-    .footer {
-        width: calc(100% - 20px);
-        font-size: 12.5px;
-        margin-bottom: 28px;
     }
 }
